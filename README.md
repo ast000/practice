@@ -1,2 +1,2 @@
-# practiceInCheckio
-something practice 
+# practice
+something practice in checkio
