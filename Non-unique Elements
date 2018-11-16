@@ -9,11 +9,11 @@ ans:
 function nonUniqueElements(data) {
     //第一解
     function checkUnique(checkEl){
-        let checkUnique = data.filter(checkElement).length;
-        function checkElement(el){
+        let checkLength = data.filter(checkSameElement).length;
+        function checkSameElement(el){
             return el == checkEl;
         }
-        if(checkUnique == 1){
+        if(checkLength == 1){
             return false;
         }else{
             return true;
