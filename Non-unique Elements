@@ -1,4 +1,5 @@
 Example:
+//給一陣列,非單一的元素留下
 nonUniqueElements([1, 2, 3, 1, 3]) == [1, 3, 1, 3]
 nonUniqueElements([1, 2, 3, 4, 5]) == []
 nonUniqueElements([5, 5, 5, 5, 5]) == [5, 5, 5, 5, 5]
@@ -6,6 +7,22 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
 
 ans:
 function nonUniqueElements(data) {
+    //第一解
+    function checkUnique(checkEl){
+        let checkUnique = data.filter(checkElement).length;
+        function checkElement(el){
+            return el == checkEl;
+        }
+        if(checkUnique == 1){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    return  data.filter(checkUnique);
+    
+    //第二解
     /* 
     const new_result = [];
     for (let item of data) {
@@ -14,27 +31,23 @@ function nonUniqueElements(data) {
         }
     }
     
-   function isUnique( arr, el) {
+   function isUnique(arr, el) {
         var hasOne = false;
         for (let item of arr){
-            if ( item === el) {
+            if (item === el) {
                 if(hasOne) {
                     return false;
                 } else {
-                    hasOne =true;
+                    hasOne = true;
                 }
             }
         }
         return true;
     } 
-    
     return  new_result;
     */
-    function isUnique(arr, el){
-        return arr.filter(a => a === el).length === 1;
-    }
-    return  data.filter(item => !isUnique(data, item));
-    //return data;
+    
+    
 }
 
 var assert = require('assert');
