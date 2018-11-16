@@ -1,2 +1,2 @@
 # practiceInCheckio
-something practice answer from me
+something practice answer
