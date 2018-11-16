@@ -1,1 +1,30 @@
+Example:
+求中位數, 如有兩個則取其兩位的平均值
+median([1, 2, 3, 4, 5]) == 3
+median([3, 1, 2, 5, 3]) == 3
+median([1, 300, 2, 200, 1]) == 2
+median([3, 6, 20, 99, 10, 15]) == 12.5
 
+ans:
+function median(data) {
+    
+    data.sort(function(a, b){
+        return a - b;
+    });
+    
+    let indexMiddle = Math.floor(data.length / 2);
+    
+    return data.length % 2 === 0 ? (data[indexMiddle] + data[indexMiddle - 1]) / 2 : data[indexMiddle];
+    
+    /*易懂寫法
+    let ans;
+    if(data.length % 2 === 0){
+        ans = (data[indexMiddle - 1] + data[indexMiddle]) / 2;
+    }else {
+        ans = data[indexMiddle];
+    }
+    return ans;
+    */
+    
+    
+}
